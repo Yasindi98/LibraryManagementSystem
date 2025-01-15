@@ -14,6 +14,7 @@ public class Library {
         libraryItems = new ArrayList<>();
         borrowedItems = new HashMap<>();
         userList = new ArrayList<>();
+        System.out.println("test");
     }
 
     public void  addItem(LibraryItem item){
