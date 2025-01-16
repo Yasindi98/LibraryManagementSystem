@@ -11,8 +11,8 @@ public abstract class LibraryItem implements Serializable {
 
     public LibraryItem(String title, String serialNumber, String author) { //Create constructors
         this.title = title;
-        this.serialNumber = serialNumber;
         this.author = author;
+        this.serialNumber = serialNumber;
         this.isBorrowed = false;
     }
 

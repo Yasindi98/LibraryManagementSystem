@@ -1,8 +1,8 @@
 package com.librarymanagementsystem;
 
 public class Book extends LibraryItem{
-    public Book(String title, String serialNumber, String author) {
-        super(title, serialNumber, author);
+    public Book(String title, String author,String serialNumber) {
+        super(title, author, serialNumber);
     }
 
     @Override

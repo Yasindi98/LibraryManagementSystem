@@ -37,7 +37,7 @@ public class LibraryIO {
         }
     }
 
-    public static Object loadUserListFromFile(String fileName) {
+    public static List<User> loadUserListFromFile(String fileName) {
         File file = new File(fileName);
         if (!file.exists()) {
             return new ArrayList<>();
@@ -58,7 +58,7 @@ public class LibraryIO {
             throw new RuntimeException(e);
         }
     }
-    public static Map<String,String> loadBorrowedItemsFromField(String fileName){
+    public static Map<String,String> loadBorrowedItemsFromFile(String fileName){
         File file = new File(fileName);
         if(!file.exists()){
             return new HashMap<String, String>();
