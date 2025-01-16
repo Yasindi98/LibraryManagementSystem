@@ -1,13 +1,15 @@
 package com.librarymanagementsystem;
 
-public abstract class LibraryItem {
+import java.io.Serializable;
+
+public abstract class LibraryItem implements Serializable {
     private String title;
     private String author;
     private String serialNumber;
     protected boolean isBorrowed;
     public abstract void borrowedItem(User user);
 
-    public LibraryItem(String title, String serialNumber, String author) {
+    public LibraryItem(String title, String serialNumber, String author) { //Create constructors
         this.title = title;
         this.serialNumber = serialNumber;
         this.author = author;
