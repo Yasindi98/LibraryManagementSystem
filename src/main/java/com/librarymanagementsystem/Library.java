@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Library {
+
     private List<LibraryItem> libraryItems;
     private List<User> userList;
     private Map<String,String> borrowedItems;
@@ -59,5 +60,23 @@ public class Library {
     }
     public Map<String, String>getBorrowedItems() {
         return borrowedItems;
+    }
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    public void printUserList() {
+        System.out.println();
+        System.out.println("USER LIST");
+        System.out.println("---------");
+        if (userList == null || userList.isEmpty()) {
+            System.out.println("The user list is empty.");
+            return;
+        }
+        int index = 1; // Start with index 0
+        for (User user : userList) {
+            System.out.println(index + ": " + user.getName());
+            index++; // Increment the index
+        }
+        System.out.println();
     }
 }
