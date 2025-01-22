@@ -9,7 +9,7 @@ public abstract class LibraryItem implements Serializable {
     protected boolean isBorrowed;
     public abstract void borrowedItem(User user);
 
-    public LibraryItem(String title, String serialNumber, String author) { //Create constructors
+    public LibraryItem(String title, String author, String serialNumber) { //Create constructors
         this.title = title;
         this.author = author;
         this.serialNumber = serialNumber;

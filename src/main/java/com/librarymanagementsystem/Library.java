@@ -49,10 +49,11 @@ public class Library {
         System.out.println("Item with serial number"+serialNumber+" is not available.");
     }
 
-    public void returnBorrowedItem(String serialNumber,User user){
+    public void returnBorrowedItem(String serialNumber){
         for (LibraryItem item:libraryItems){
             if (item.getSerialNumber().equals(serialNumber)){
                 getBorrowedItems().remove(item.getSerialNumber());
+                System.out.println("Item successfully returned");
                 return;
             }
         }

@@ -130,12 +130,46 @@ public class Main {
                 // Print the updated user list
                 library.printUserList();
 
+            } else if (mainOptionStr == 3) {
+                System.out.println("Which user is going to buy the item?");
+                List<User> userList = library.getUserList();
+                for (int i = 0; i < userList.size(); i++) {
+                    User user = userList.get(i);
+                    System.out.println(i + ". " + user.getName());
+                }
+                System.out.print("Enter user no : ");
+                int userNo = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
+
+                User selectedUser = userList.get(userNo);
+
+                List<LibraryItem> libraryItems1 = library.getLibraryItems();
+                for (int i = 0; i < libraryItems1.size(); i++) {
+                    LibraryItem item = libraryItems1.get(i);
+                    System.out.println(item.getSerialNumber() + " - " + item.getTitle());
+                }
+
+                System.out.print("What is the serial number of the item : ");
+                String serialNo = new BufferedReader(new InputStreamReader(System.in)).readLine();
+
+                library.borrowItem(serialNo, selectedUser);
+
+            } else if (mainOptionStr == 4) {
+                List<LibraryItem> libraryItems1 = library.getLibraryItems();
+                for (int i = 0; i < libraryItems1.size(); i++) {
+                    LibraryItem item = libraryItems1.get(i);
+                    System.out.println(item.getSerialNumber() + " - " + item.getTitle());
+                }
+
+                System.out.print("Which item is going to return : ");
+                String serialNo = new BufferedReader(new InputStreamReader(System.in)).readLine();
+
+                library.returnBorrowedItem(serialNo);
             } else if (mainOptionStr == 5) {
                 exit = true;
             }
         }
 
         LibraryIO.saveItemToFile(library.getLibraryItems(), "itemlist.lms");
-        LibraryIO.saveUserListToFile(library.getUserList(), "userlist.lms");
+        //LibraryIO.saveUserListToFile(library.getUserList(), "userlist.lms");
     }
 }
